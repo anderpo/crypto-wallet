@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-const Title = styled.h2`
+const Text = styled.h2`
   color: red;
 `;
 
 const Title = () => {
-  return <TItle />;
+  return <Text>Tech challenge</Text>;
 };
 
 export default Title;
