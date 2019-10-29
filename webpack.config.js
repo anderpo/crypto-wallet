@@ -7,13 +7,14 @@ const config = {
   mode: process.env.NODE_ENV,
 
   output: {
-    publicPath: '',
+    publicPath: "",
     filename: "main.js",
     path: path.resolve(__dirname, "dist")
   },
 
   devServer: {
-    port: 3005
+    port: 3005,
+    historyApiFallback: true
   },
 
   devtool: process.env.NODE_ENV === "development" ? "source-map" : "",
