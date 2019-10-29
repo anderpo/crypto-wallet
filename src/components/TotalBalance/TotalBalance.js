@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Text from "../Text/Text";
 import Dollar from "./../../assets/icons/dollar";
+import TotalProfit from "./TotalProfit";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -13,7 +14,10 @@ const Wrapper = styled.div`
 const Balance = styled.div`
   margin: 15px 0 25px 0;
   display: flex;
+`;
 
+const Period = styled(Text.Primary)`
+  font-size: 13px;
 `;
 
 const TotalBalance = () => {
@@ -24,6 +28,8 @@ const TotalBalance = () => {
         <Dollar />
         <Text.Tertiary size={30}>1,632.95</Text.Tertiary>
       </Balance>
+      <Period>24h Changes</Period>
+      <TotalProfit profit value={37.55}/>
     </Wrapper>
   );
 };
