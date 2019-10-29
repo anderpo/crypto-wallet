@@ -1,12 +1,26 @@
 import React from "react";
-import styled from "styled-components";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import MainTheme from "./styles/MainTheme";
+import GlobalStyle from "./styles/style";
+import GradientWrapper from "./components/GradientWrapper/GradientWrapper";
+import HomePage from "./pages/HomePage";
 
-const Text = styled.h2`
-  color: red;
-`;
-
-const Title = () => {
-  return <Text>Tech challenge</Text>;
+const App = () => {
+  return (
+    <ThemeProvider theme={MainTheme}>
+      <React.Fragment>
+        <GlobalStyle />
+        <BrowserRouter>
+          <GradientWrapper>
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+            </Switch>
+          </GradientWrapper>
+        </BrowserRouter>
+      </React.Fragment>
+    </ThemeProvider>
+  );
 };
 
-export default Title;
+export default App;
