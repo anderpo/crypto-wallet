@@ -10,7 +10,7 @@ const App = () => {
   return (
     <ThemeProvider theme={MainTheme}>
       <React.Fragment>
-        <GlobalStyle />
+        <GlobalStyle font={MainTheme.fontFamily} />
         <BrowserRouter>
           <GradientWrapper>
             <Switch>
