@@ -14,20 +14,20 @@ const Col = styled.div`
 `;
 
 const Fullname = styled(Text)`
-  font-size: ${p => (p.size === "large" ? "9px" : "6px")};
+  font-size: ${p => (p.large ? "9px" : "6px")};
   color: ${p => p.theme.spunPearl};
 `;
 
-const Currency = ({ curr, fullName, size = "large" }) => {
-  const iconSize = size === "large" ? 32 : 26;
+const Currency = ({ curr, fullName, large = false }) => {
+  const iconSize = large ? 32 : 26;
   return (
     <Row>
       <Col>
         <i className={`cc ${curr}`} style={{ fontSize: `${iconSize}px` }} />
       </Col>
-      <Col style={{ marginLeft: size === "large" ? "15px" : "10px" }}>
-        <Text size={size === "large" ? "16px" : "11px"}>{curr.toUpperCase()}</Text>
-        <Fullname size={size}>{fullName}</Fullname>
+      <Col style={{ marginLeft: large ? "15px" : "10px" }}>
+        <Text size={large ? 16 : 11}>{curr.toUpperCase()}</Text>
+        <Fullname large>{fullName}</Fullname>
       </Col>
     </Row>
   );

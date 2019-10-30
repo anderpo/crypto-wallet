@@ -39,7 +39,7 @@ const CurrencyItem = ({ currency, myCoin }) => {
     <Link to={`/currency-rate/${name}`}>
       <Row style={{ paddingBottom: "15px" }}>
         <Col>
-          <Currency curr={name} fullName={fullName} />
+          <Currency curr={name} fullName={fullName} large/>
         </Col>
         <Col style={{ alignItems: "flex-end" }}>
           <Text.Tertiary size={15}>{amount}</Text.Tertiary>

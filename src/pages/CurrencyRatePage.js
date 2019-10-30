@@ -6,6 +6,7 @@ import CurrencyCarousel from "./../components/CurrencyCarousel/CurrencyCarousel"
 import { getRateExchange } from "../actions/WalletAcions";
 import { setCurrency } from "../actions/UIActions";
 import Loader from "./../components/Loader/Loader.js";
+import SelectedCurrency from "./../components/SelectedCurrency/SelectedCurrency";
 
 class CurrencyRatePage extends React.Component {
   componentDidMount() {
@@ -16,11 +17,13 @@ class CurrencyRatePage extends React.Component {
   }
 
   render() {
-    const { myCoins, loading, match} = this.props;
+    const { myCoins, loading, match, selectedCurrency } = this.props;
     const { selected } = match.params;
     const filteredCoins = myCoins.sort((a, b) =>
       a.name === selected ? -1 : b.name === selected ? 1 : 0
     );
+
+    const coin = myCoins.find(c => c.name === selectedCurrency);
 
     return (
       <>
@@ -28,16 +31,18 @@ class CurrencyRatePage extends React.Component {
           <GoBackButton />
         </Header>
         {loading ? <Loader /> : <CurrencyCarousel coins={filteredCoins} />}
+        {coin && <SelectedCurrency coin={coin} />}
       </>
     );
   }
 }
 
-const mapStateToProps = ({ wallet }) => {
+const mapStateToProps = ({ wallet, ui }) => {
   return {
     todayRateExchange: wallet.todayRateExchange,
     myCoins: wallet.myCoins,
     loading: wallet.loading,
+    selectedCurrency: ui.selectedCurrency
   };
 };
 
