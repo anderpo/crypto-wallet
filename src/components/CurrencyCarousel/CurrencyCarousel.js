@@ -26,7 +26,6 @@ const CurrencyCarousel = ({ coins, selectedCurrency }) => {
               key={uuid()}
               coin={c}
               selected={selectedCurrency === c.name}
-              carouselMode
             />
           ))}
     </Wrapper>

@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import Currency from "./../Currency/Currency";
-import Text from "./../Text/Text";
-import PercentProfit from "./../PercentProfit/PercentProfit";
-import { setCurrency } from "./../../actions/UIActions";
+import Currency from "../Currency/Currency";
+import Text from "../Text/Text";
+import PercentProfit from "../PercentProfit/PercentProfit";
+import { setCurrency } from "../../actions/UIActions";
 
 const Wrapper = styled.div`
   display: flex;
@@ -34,7 +34,7 @@ const Col = styled.div`
 `;
 
 const CurrencyItem = props => {
-  const { coin, onSetCurrency, selected, carouselMode = false } = props;
+  const { coin = {}, onSetCurrency, selected } = props;
   const { name, fullName, amount, profitPercent } = coin;
   return (
     <Wrapper
