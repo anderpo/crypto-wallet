@@ -15,6 +15,7 @@ class HomePage extends React.Component {
   }
 
   render() {
+    const { todayRateExchange, loading } = this.props;
     return (
       <HomePageWrapper>
         <Header>
@@ -22,7 +23,7 @@ class HomePage extends React.Component {
           <Notification />
         </Header>
         <TotalBalance />
-        <CurrencyList />
+        <CurrencyList list={todayRateExchange} loading={loading} />
       </HomePageWrapper>
     );
   }
@@ -30,7 +31,8 @@ class HomePage extends React.Component {
 
 const mapStateToProps = ({ wallet }) => {
   return {
-    todayRateExchange: wallet.todayRateExchange
+    todayRateExchange: wallet.todayRateExchange,
+    loading: wallet.loading
   };
 };
 

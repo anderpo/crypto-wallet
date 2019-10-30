@@ -7,6 +7,7 @@ import theme from "./../../styles/MainTheme";
 import Profit from "./Profit";
 
 const Wrapper = styled.div`
+  width: 100%;
   border-radius: 5px;
   padding: 15px 20px;
   margin-bottom: 15px;

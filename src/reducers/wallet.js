@@ -8,8 +8,10 @@ const initialState = {
   todayRateExchange: [
     { fullName: "Bitcoin", name: "BTC", price: { USD: 0 } },
     { fullName: "Ethereum", name: "ETH", price: { USD: 0 } },
-    { fullName: "Ripple", name: "XRP", price: { USD: 0 } }
-  ],
+    { fullName: "Ripple", name: "XRP", price: { USD: 0 } },
+    { fullName: "Litecoin", name: "LTC", price: { USD: 0 } },
+    { fullName: "Trx", name: "TRX", price: { USD: 0 } },
+  ]
 };
 
 function updateTodayRateExhange(data, rateExchange) {
