@@ -4,6 +4,7 @@ import Search from "./../components/Search/Search";
 import Notification from "./../components/Notification/Notification";
 import TotalBalance from "./../components/TotalBalance/TotalBalance";
 import HomePageWrapper from "../components/HomePageWrapper/HomePageWrapper";
+import CurrencyList from "../components/CurrencyList/CurrencyList";
 
 const HomePage = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage = () => {
         <Notification />
       </Header>
       <TotalBalance />
+      <CurrencyList />
     </HomePageWrapper>
   );
 };
