@@ -1,4 +1,5 @@
 import React from "react";
+import {Link as DefaulLink} from 'react-router-dom';
 import styled from "styled-components";
 import Currency from "./../Currency/Currency";
 import Text from "./../Text/Text";
@@ -6,7 +7,7 @@ import Dollar from "./../../assets/icons/dollar";
 import theme from "./../../styles/MainTheme";
 import Profit from "./Profit";
 
-const Wrapper = styled.div`
+const Link = styled(DefaulLink)`
   width: 100%;
   border-radius: 5px;
   padding: 15px 20px;
@@ -35,7 +36,7 @@ const CurrencyItem = ({ currency, myCoin }) => {
   const { name, fullName, price } = currency;
   const { amount, profit, profitPercent } = myCoin;
   return (
-    <Wrapper>
+    <Link to="/currency-rate">
       <Row style={{ paddingBottom: "15px" }}>
         <Col>
           <Currency curr={name} fullName={fullName} />
@@ -62,7 +63,7 @@ const CurrencyItem = ({ currency, myCoin }) => {
           <Text.Secondary size={12}>Profit / Loss</Text.Secondary>
         </Col>
       </Row>
-    </Wrapper>
+    </Link>
   );
 };
 
