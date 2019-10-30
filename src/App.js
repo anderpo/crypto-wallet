@@ -1,12 +1,30 @@
 import React from "react";
-import styled from "styled-components";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import { Provider as ReduxProvider } from "react-redux";
+import MainTheme from "./styles/MainTheme";
+import GlobalStyle from "./styles/style";
+import GradientWrapper from "./components/GradientWrapper/GradientWrapper";
+import HomePage from "./pages/HomePage";
+import { store } from "./store/configureStore";
 
-const Text = styled.h2`
-  color: red;
-`;
-
-const Title = () => {
-  return <Text>Tech challenge</Text>;
+const App = () => {
+  return (
+    <ReduxProvider store={store}>
+      <ThemeProvider theme={MainTheme}>
+        <React.Fragment>
+          <GlobalStyle font={MainTheme.fontFamily} />
+          <BrowserRouter>
+            <GradientWrapper>
+              <Switch>
+                <Route exact path="/" component={HomePage} />
+              </Switch>
+            </GradientWrapper>
+          </BrowserRouter>
+        </React.Fragment>
+      </ThemeProvider>
+    </ReduxProvider>
+  );
 };
 
-export default Title;
+export default App;
