@@ -10,6 +10,7 @@
   "author": "Anderpo",
   "license": "ISC",
   "dependencies": {
+    "accounting": "^0.4.1",
     "dotenv": "^8.2.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
