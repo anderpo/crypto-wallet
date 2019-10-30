@@ -10,12 +10,19 @@ const Wrapper = styled.div`
   min-width: 190px;
   height: 100%;
   border-radius: 5px;
-  background-color: rgba(159, 160, 165, 0.1);
   margin: 0 4px;
   padding: 8px;
+  border: 1px solid rgba(159, 160, 165, 0.1);
+  background-color: transparent;
 
   &:first-child {
+    background-color: rgba(159, 160, 165, 0.1);
+    border: none;
     margin: 0 4px 0 15px;
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 `;
 

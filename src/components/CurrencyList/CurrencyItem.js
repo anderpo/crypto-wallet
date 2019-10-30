@@ -36,7 +36,7 @@ const CurrencyItem = ({ currency, myCoin }) => {
   const { name, fullName, price } = currency;
   const { amount, profit, profitPercent } = myCoin;
   return (
-    <Link to="/currency-rate">
+    <Link to={`/currency-rate/${name}`}>
       <Row style={{ paddingBottom: "15px" }}>
         <Col>
           <Currency curr={name} fullName={fullName} />

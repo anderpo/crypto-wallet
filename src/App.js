@@ -19,7 +19,7 @@ const App = () => {
             <GradientWrapper>
               <Switch>
                 <Route exact path="/" component={HomePage} />
-                <Route exact path="/currency-rate" component={CurrencyRatePage} />
+                <Route exact path="/currency-rate/:selected" component={CurrencyRatePage} />
               </Switch>
             </GradientWrapper>
           </BrowserRouter>

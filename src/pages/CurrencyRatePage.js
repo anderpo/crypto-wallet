@@ -4,38 +4,47 @@ import Header from "./../components/Header/Header";
 import GoBackButton from "./../components/GoBackButton/GoBackButton";
 import CurrencyCarousel from "./../components/CurrencyCarousel/CurrencyCarousel";
 import { getRateExchange } from "../actions/WalletAcions";
+import { setCurrency } from "../actions/UIActions";
 import Loader from "./../components/Loader/Loader.js";
 
 class CurrencyRatePage extends React.Component {
   componentDidMount() {
-    const { todayRateExchange, onGetRateExchange } = this.props;
+    const { todayRateExchange, onGetRateExchange, onSetCurrency, match } = this.props;
+    const { selected } = match.params;
     onGetRateExchange(todayRateExchange.map(curr => curr.name).join(","));
+    onSetCurrency(selected);
   }
 
   render() {
-    const { myCoins, loading } = this.props;
+    const { myCoins, loading, selectedCurrency } = this.props;
+    const filteredCoins = myCoins.sort((a, b) =>
+      a.name === selectedCurrency ? -1 : b.name === selectedCurrency ? 1 : 0
+    );
+
     return (
       <>
         <Header>
           <GoBackButton />
         </Header>
-        {loading ? <Loader /> : <CurrencyCarousel coins={myCoins} />}
+        {loading ? <Loader /> : <CurrencyCarousel coins={filteredCoins} />}
       </>
     );
   }
 }
 
-const mapStateToProps = ({ wallet }) => {
+const mapStateToProps = ({ wallet, ui }) => {
   return {
     todayRateExchange: wallet.todayRateExchange,
     myCoins: wallet.myCoins,
-    loading: wallet.loading
+    loading: wallet.loading,
+    selectedCurrency: ui.selectedCurrency
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    onGetRateExchange: params => dispatch(getRateExchange(params))
+    onGetRateExchange: params => dispatch(getRateExchange(params)),
+    onSetCurrency: selected => dispatch(setCurrency(selected))
   };
 };
 
