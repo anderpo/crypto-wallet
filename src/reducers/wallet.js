@@ -10,7 +10,7 @@ const initialState = {
     { fullName: "Ethereum", name: "ETH", price: { USD: 0 } },
     { fullName: "Ripple", name: "XRP", price: { USD: 0 } },
     { fullName: "Litecoin", name: "LTC", price: { USD: 0 } },
-    { fullName: "Trx", name: "TRX", price: { USD: 0 } },
+    { fullName: "Tron", name: "TRX", price: { USD: 0 } },
   ]
 };
 
