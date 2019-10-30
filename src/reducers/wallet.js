@@ -80,7 +80,7 @@ function updatePfofit(data, rateExchange) {
   const myCoins = data.map(c => {
     return {
       ...c,
-      profit: toFixed(Number(rateExchange[c.name].USD * c.amount), 2),
+      profit: Number(toFixed(rateExchange[c.name].USD * c.amount), 2),
       profitPercent: Number(
         toFixed(((rateExchange[c.name].USD - c.purchasePrice.USD) / c.purchasePrice.USD) * 100, 2)
       )

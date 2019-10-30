@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: ${p => (p.font ? p.font : "sans-serif")};
+    text-decoration: none;
   }
 `;
 

@@ -6,6 +6,7 @@ import MainTheme from "./styles/MainTheme";
 import GlobalStyle from "./styles/style";
 import GradientWrapper from "./components/GradientWrapper/GradientWrapper";
 import HomePage from "./pages/HomePage";
+import CurrencyRatePage from "./pages/CurrencyRatePage";
 import { store } from "./store/configureStore";
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
             <GradientWrapper>
               <Switch>
                 <Route exact path="/" component={HomePage} />
+                <Route exact path="/currency-rate/:selected" component={CurrencyRatePage} />
               </Switch>
             </GradientWrapper>
           </BrowserRouter>
