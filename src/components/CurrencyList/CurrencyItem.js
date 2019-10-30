@@ -1,11 +1,11 @@
 import React from "react";
-import {Link as DefaulLink} from 'react-router-dom';
+import { Link as DefaulLink } from "react-router-dom";
 import styled from "styled-components";
 import Currency from "./../Currency/Currency";
 import Text from "./../Text/Text";
 import Dollar from "./../../assets/icons/dollar";
 import theme from "./../../styles/MainTheme";
-import Profit from "./Profit";
+import PercentProfit from "./../PercentProfit/PercentProfit";
 
 const Link = styled(DefaulLink)`
   width: 100%;
@@ -59,7 +59,7 @@ const CurrencyItem = ({ currency, myCoin }) => {
           <Text.Secondary size={12}>Price</Text.Secondary>
         </Col>
         <Col style={{ alignItems: "flex-end" }}>
-          <Profit value={profitPercent} profit={profitPercent > 0 || profitPercent === 0} />
+          <PercentProfit value={profitPercent} />
           <Text.Secondary size={12}>Profit / Loss</Text.Secondary>
         </Col>
       </Row>
