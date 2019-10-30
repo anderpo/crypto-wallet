@@ -16,9 +16,10 @@ class CurrencyRatePage extends React.Component {
   }
 
   render() {
-    const { myCoins, loading, selectedCurrency } = this.props;
+    const { myCoins, loading, match} = this.props;
+    const { selected } = match.params;
     const filteredCoins = myCoins.sort((a, b) =>
-      a.name === selectedCurrency ? -1 : b.name === selectedCurrency ? 1 : 0
+      a.name === selected ? -1 : b.name === selected ? 1 : 0
     );
 
     return (
@@ -32,12 +33,11 @@ class CurrencyRatePage extends React.Component {
   }
 }
 
-const mapStateToProps = ({ wallet, ui }) => {
+const mapStateToProps = ({ wallet }) => {
   return {
     todayRateExchange: wallet.todayRateExchange,
     myCoins: wallet.myCoins,
     loading: wallet.loading,
-    selectedCurrency: ui.selectedCurrency
   };
 };
 

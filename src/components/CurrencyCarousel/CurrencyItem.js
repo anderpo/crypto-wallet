@@ -1,8 +1,10 @@
 import React from "react";
+import { connect } from "react-redux";
 import styled from "styled-components";
 import Currency from "./../Currency/Currency";
 import Text from "./../Text/Text";
 import PercentProfit from "./../PercentProfit/PercentProfit";
+import { setCurrency } from "./../../actions/UIActions";
 
 const Wrapper = styled.div`
   display: flex;
@@ -12,12 +14,10 @@ const Wrapper = styled.div`
   border-radius: 5px;
   margin: 0 4px;
   padding: 8px;
-  border: 1px solid rgba(159, 160, 165, 0.1);
-  background-color: transparent;
+  border: ${p => (p.selected ? "none" : "1px solid rgba(159, 160, 165, 0.1)")};
+  background-color: ${p => (p.selected ? "rgba(159, 160, 165, 0.1)" : "transparent")};
 
   &:first-child {
-    background-color: rgba(159, 160, 165, 0.1);
-    border: none;
     margin: 0 4px 0 15px;
   }
 
@@ -30,12 +30,19 @@ const Col = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-end;
 `;
 
-const CurrencyItem = ({ coin = {}, carouselMode = false }) => {
+const CurrencyItem = props => {
+  const { coin, onSetCurrency, selected, carouselMode = false } = props;
   const { name, fullName, amount, profitPercent } = coin;
   return (
-    <Wrapper>
+    <Wrapper
+      onClick={() => {
+        onSetCurrency(name);
+      }}
+      selected={selected}
+    >
       <Currency curr={name} fullName={fullName} />
       <Col>
         <Text.Tertiary size={15}>{amount}</Text.Tertiary>
@@ -45,4 +52,17 @@ const CurrencyItem = ({ coin = {}, carouselMode = false }) => {
   );
 };
 
-export default CurrencyItem;
+const mapStateToProps = () => {
+  return {};
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onSetCurrency: selected => dispatch(setCurrency(selected))
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CurrencyItem);
