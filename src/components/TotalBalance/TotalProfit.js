@@ -12,13 +12,14 @@ const Value = styled.div`
   font-size: 14px;
 `;
 
-const TotalProfit = ({ profit, value }) => {
+const TotalProfit = ({ value }) => {
+  const positive = value > 0 || value === 0;
   return (
-    <Value profit={profit}>
-      +
-      <Dollar fill={profit ? theme.caribbeanGreen : theme.vividTangerine} />
+    <Value profit={positive}>
+      {`${positive ? '+' : '-'}`}
+      <Dollar fill={positive ? theme.caribbeanGreen : theme.vividTangerine} />
       {value}
-      <Arrow fill={profit ? theme.caribbeanGreen : theme.vividTangerine} />
+      <Arrow fill={positive ? theme.caribbeanGreen : theme.vividTangerine} />
     </Value>
   );
 };

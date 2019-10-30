@@ -31,8 +31,9 @@ const Col = styled.div`
   justify-content: space-between;
 `;
 
-const CurrencyItem = ({ currency }) => {
-  const { name, fullName } = currency;
+const CurrencyItem = ({ currency, myCoin }) => {
+  const { name, fullName, price } = currency;
+  const { amount, profit, profitPercent } = myCoin;
   return (
     <Wrapper>
       <Row style={{ paddingBottom: "15px" }}>
@@ -40,10 +41,10 @@ const CurrencyItem = ({ currency }) => {
           <Currency curr={name} fullName={fullName} />
         </Col>
         <Col style={{ alignItems: "flex-end" }}>
-          <Text.Tertiary size={15}>0.5624226123</Text.Tertiary>
+          <Text.Tertiary size={15}>{amount}</Text.Tertiary>
           <Row>
             <Dollar width={12} height={18} fill={theme.spunPearl} />
-            <Text.Secondary size={12}>1,42422.32</Text.Secondary>
+            <Text.Secondary size={12}>{profit}</Text.Secondary>
           </Row>
         </Col>
       </Row>
@@ -52,14 +53,12 @@ const CurrencyItem = ({ currency }) => {
         <Col>
           <Row>
             <Dollar width={12} height={18} />
-            <Text.Tertiary size={12}>6,4535.34</Text.Tertiary>
+            <Text.Tertiary size={12}>{price.USD}</Text.Tertiary>
           </Row>
           <Text.Secondary size={12}>Price</Text.Secondary>
         </Col>
         <Col style={{ alignItems: "flex-end" }}>
-          <Profit value={2.75} profit>
-            2.75
-          </Profit>
+          <Profit value={profitPercent} profit={profitPercent > 0 || profitPercent === 0} />
           <Text.Secondary size={12}>Profit / Loss</Text.Secondary>
         </Col>
       </Row>

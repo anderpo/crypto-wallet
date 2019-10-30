@@ -10,7 +10,7 @@ const Value = styled.div`
 `;
 
 const Profit = ({ profit, value }) => {
-  return <Value profit={profit}>{`+ ${value}%`}</Value>;
+  return <Value profit={profit}>{`${profit ? "+" : "-"} ${Math.abs(value)}%`}</Value>;
 };
 
 export default Profit;

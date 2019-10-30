@@ -5,7 +5,7 @@ import uuid from "uuid";
 import Text from "./../Text/Text";
 import Loader from "../Loader/Loader";
 
-const CurrencyList = ({ list = [], loading }) => {
+const CurrencyList = ({ listRateExchange = [], myCoins, loading }) => {
   if (loading) return <Loader />;
 
   const renderMessage = () => {
@@ -14,7 +14,15 @@ const CurrencyList = ({ list = [], loading }) => {
 
   return (
     <Wrapper>
-      {!list.length ? renderMessage() : list.map(c => <CurrencyItem key={uuid()} currency={c} />)}
+      {!listRateExchange.length
+        ? renderMessage()
+        : listRateExchange.map(c => (
+            <CurrencyItem
+              key={uuid()}
+              myCoin={myCoins.find(mc => mc.name === c.name)}
+              currency={c}
+            />
+          ))}
     </Wrapper>
   );
 };

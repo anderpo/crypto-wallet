@@ -20,16 +20,16 @@ const Period = styled(Text.Primary)`
   font-size: 13px;
 `;
 
-const TotalBalance = () => {
+const TotalBalance = ({ balance, profit }) => {
   return (
     <Wrapper>
       <Text.Primary size={10}>Your total balance</Text.Primary>
       <Balance>
         <Dollar />
-        <Text.Tertiary size={30}>1,632.95</Text.Tertiary>
+        <Text.Tertiary size={30}>{balance}</Text.Tertiary>
       </Balance>
       <Period>24h Changes</Period>
-      <TotalProfit profit value={37.55}/>
+      <TotalProfit value={profit} />
     </Wrapper>
   );
 };

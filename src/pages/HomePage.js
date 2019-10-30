@@ -15,15 +15,15 @@ class HomePage extends React.Component {
   }
 
   render() {
-    const { todayRateExchange, loading } = this.props;
+    const { totalBalance, totalProfit, todayRateExchange, myCoins, loading } = this.props;
     return (
       <HomePageWrapper>
         <Header>
           <Search />
           <Notification />
         </Header>
-        <TotalBalance />
-        <CurrencyList list={todayRateExchange} loading={loading} />
+        <TotalBalance balance={totalBalance} profit={totalProfit} />
+        <CurrencyList listRateExchange={todayRateExchange} myCoins={myCoins} loading={loading} />
       </HomePageWrapper>
     );
   }
@@ -32,6 +32,9 @@ class HomePage extends React.Component {
 const mapStateToProps = ({ wallet }) => {
   return {
     todayRateExchange: wallet.todayRateExchange,
+    myCoins: wallet.myCoins,
+    totalBalance: wallet.totalBalance,
+    totalProfit: wallet.totalProfit,
     loading: wallet.loading
   };
 };
