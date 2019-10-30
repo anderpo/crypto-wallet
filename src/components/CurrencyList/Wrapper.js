@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   display: flex;
+  max-height: 68vh;
+  overflow-y: scroll;
   flex-direction: column;
-  justify-content: center;
-  padding: 22px 0;
+  margin-top: 22px;
 `;
 
 export default Wrapper;
