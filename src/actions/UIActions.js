@@ -1,7 +1,6 @@
 export const SET_CURRENCY = "SET_CURRENCY";
 export const GET_HISTORICAL_RATE = "GET_HISTORICAL_RATE";
 export const GET_HISTORICAL_RATE_SUCCESS = "GET_HISTORICAL_RATE_SUCCESS";
-export const GET_HISTORICAL_RATE_FAIL = "GET_HISTORICAL_RATE_FAIL";
 import constants from "./../constants/constants";
 import periods from "./../constants/timePeriods";
 
