@@ -1,6 +1,7 @@
 export const SET_CURRENCY = "SET_CURRENCY";
 export const GET_HISTORICAL_RATE = "GET_HISTORICAL_RATE";
 export const GET_HISTORICAL_RATE_SUCCESS = "GET_HISTORICAL_RATE_SUCCESS";
+export const SET_PERIOD = "SET_PERIOD";
 import constants from "./../constants/constants";
 import periods from "./../constants/timePeriods";
 
@@ -11,6 +12,15 @@ export function setCurrency(selected) {
     dispatch({
       type: SET_CURRENCY,
       payload: selected
+    });
+  };
+}
+
+export function setPeriod(period) {
+  return dispatch => {
+    dispatch({
+      type: SET_PERIOD,
+      payload: period
     });
   };
 }

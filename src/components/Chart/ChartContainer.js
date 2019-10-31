@@ -19,9 +19,13 @@ class ChartContainer extends React.Component {
   }
 
   componentDidUpdate(prev) {
-    const { selectedCurrency, selectedPeriod, onGetHistoricalRateExchange  } = this.props;
+    const { selectedCurrency, selectedPeriod, onGetHistoricalRateExchange } = this.props;
 
     if (selectedCurrency !== prev.selectedCurrency) {
+      onGetHistoricalRateExchange(selectedCurrency, selectedPeriod);
+    }
+
+    if (selectedPeriod !== prev.selectedPeriod) {
       onGetHistoricalRateExchange(selectedCurrency, selectedPeriod);
     }
   }

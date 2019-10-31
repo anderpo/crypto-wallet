@@ -5,6 +5,7 @@ import {
   SET_CURRENCY,
   GET_HISTORICAL_RATE,
   GET_HISTORICAL_RATE_SUCCESS,
+  SET_PERIOD
 } from "./../actions/UIActions";
 
 const initialState = {
@@ -48,6 +49,9 @@ export function uiReducer(state = initialState, action) {
   switch (action.type) {
     case SET_CURRENCY:
       return { ...state, selectedCurrency: action.payload };
+
+    case SET_PERIOD:
+      return { ...state, selectedPeriod: action.payload };
 
     case GET_HISTORICAL_RATE:
       return { ...state, historicalData: { ...state.historicalData, loading: true }, error: "" };
