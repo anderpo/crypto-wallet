@@ -7,7 +7,7 @@ import uuid from "uuid";
 const Wrapper = styled.div`
   width: 100%;
   height: 50px;
-  overflow-x: scroll;
+  overflow-x: auto;
   display: flex;
   flex-wrap: no-wrap;
 `;
