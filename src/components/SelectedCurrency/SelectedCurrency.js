@@ -10,8 +10,7 @@ const Wrapper = styled.div`
   min-width: 190px;
   height: 110px;
   border-radius: 5px;
-  margin: 0 4px;
-  padding: 0 30px;
+  padding: 0 34px;
 `;
 
 const Col = styled.div`
