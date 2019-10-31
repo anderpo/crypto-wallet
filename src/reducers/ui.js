@@ -5,7 +5,6 @@ import {
   SET_CURRENCY,
   GET_HISTORICAL_RATE,
   GET_HISTORICAL_RATE_SUCCESS,
-  GET_HISTORICAL_RATE_FAIL
 } from "./../actions/UIActions";
 
 const initialState = {
