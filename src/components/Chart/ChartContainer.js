@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   max-height: 400px;
+  margin-top: 25px;
 `;
 
 class ChartContainer extends React.Component {
