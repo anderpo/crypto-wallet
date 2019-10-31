@@ -7,6 +7,7 @@ import { getRateExchange } from "../actions/WalletAcions";
 import { setCurrency } from "../actions/UIActions";
 import Loader from "./../components/Loader/Loader.js";
 import SelectedCurrency from "./../components/SelectedCurrency/SelectedCurrency";
+import ChartContainer from "../components/Chart/ChartContainer";
 
 class CurrencyRatePage extends React.Component {
   componentDidMount() {
@@ -32,6 +33,7 @@ class CurrencyRatePage extends React.Component {
         </Header>
         {loading ? <Loader /> : <CurrencyCarousel coins={filteredCoins} />}
         {coin && <SelectedCurrency coin={coin} />}
+        {selectedCurrency && <ChartContainer />}
       </>
     );
   }
