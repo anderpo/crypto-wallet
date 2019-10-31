@@ -1,5 +1,7 @@
 # Tech challenge "Crypto Wallet"
 
+mobile version
+
 [Demo](http://demo.anderpo.ru)
 
 ## Requirements
