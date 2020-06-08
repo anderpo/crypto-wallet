@@ -2,7 +2,7 @@
 
 mobile version
 
-[Demo](http://demo.anderpo.ru)
+[Demo](https://demo1.aspotapov.ru)
 
 ## Requirements
 
@@ -19,8 +19,3 @@ For development
 if you want build
 
 `npm run build`
-
-some changes from master
-some changes
-some changes 2
-some changes 3
